@@ -45,8 +45,8 @@ const classExtention = class {
   // This function is to create your button on viewer, it used autodesk forge api
   createUI() {
     this.panel = new PanelClass(this.viewer, PanelTitle);
-    this.panel.setVisible(true); // to delete
     var button1 = new Autodesk.Viewing.UI.Button(ButtonLabel);
+    this.panel.setVisible(true);
     button1.onClick = e => {
       if (!this.panel.isVisible()) {
         this.panel.setVisible(true);

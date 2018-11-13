@@ -1,7 +1,8 @@
 <template>
   <md-content>
     <md-list :md-expand-single="false">
-      <label-type-node :type-node="labelTypeNodes[index]"
+      <label-type-node :context="context"
+                       :type-node="labelTypeNodes[index]"
                        :type="type"
                        @delete="$emit('deleteType', index)"
                        v-for="(type, index) in labelTypes"
@@ -24,6 +25,10 @@ export default {
     labelTypeCreate
   },
   props: {
+    context: {
+      type: Object,
+      required: false
+    },
     labelTypeNodes: {
       type: Array,
       required: true

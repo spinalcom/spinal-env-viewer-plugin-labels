@@ -1,6 +1,7 @@
 <template>
   <md-content class="container-label">
-    <label-type-list :label-type-nodes="labelTypeNodes"
+    <label-type-list :context="context"
+                     :label-type-nodes="labelTypeNodes"
                      :label-types="labelTypes"
                      @addType="addType"
                      @deleteType="deleteType" />
@@ -17,6 +18,7 @@ import {
   SpinalContext,
   SpinalGraph
 } from "../spinal-model-graph/src/index.js";
+import { LabelModel } from "./labelModel.js";
 
 function hitTest(e) {
   let viewer = window.spinal.ForgeViewer.viewer;
@@ -121,9 +123,9 @@ export default {
       );
     },
     addType: function(newType) {
-      let newNode = new SpinalNode("labelType", newType);
+      let newNode = new SpinalNode(newType.name.get(), undefined, newType);
 
-      this.context.addChild(newNode, "hasLabelType");
+      this.context.addChildInContext(newNode, "hasLabelType");
       this.labelTypes.push(newType);
       this.labelTypeNodes.push(newNode);
     },

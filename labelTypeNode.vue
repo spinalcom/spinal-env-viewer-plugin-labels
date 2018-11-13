@@ -36,6 +36,10 @@ export default {
     labelList
   },
   props: {
+    context: {
+      type: Object,
+      required: false
+    },
     typeNode: {
       type: Object,
       required: true
@@ -126,9 +130,9 @@ export default {
       this.viewer.impl.invalidate(true);
     },
     addLabel: function(newLabel) {
-      let labelNode = new SpinalNode("label", newLabel);
+      let labelNode = new SpinalNode(newLabel.name.get(), undefined, newLabel);
 
-      this.typeNode.addChild(labelNode, "hasLabel", 0);
+      this.typeNode.addChildInContext(labelNode, "hasLabel", 0, this.context);
       this.labelNodes.push(labelNode);
       this.labels.push(newLabel);
 
