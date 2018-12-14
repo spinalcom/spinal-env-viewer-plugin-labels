@@ -16,7 +16,8 @@ import labelCreate from "./labelCreate.vue";
 import {
   SpinalNode,
   SpinalContext,
-  SpinalGraph
+  SpinalGraph,
+  SPINAL_RELATION_LST_PTR_TYPE
 } from "spinal-model-graph";
 import { LabelModel } from "./labelModel.js";
 
@@ -125,7 +126,7 @@ export default {
     addType: function(newType) {
       let newNode = new SpinalNode(newType.name.get(), undefined, newType);
 
-      this.context.addChildInContext(newNode, "hasLabelType");
+      this.context.addChildInContext(newNode, "hasLabelType", SPINAL_RELATION_LST_PTR_TYPE);
       this.labelTypes.push(newType);
       this.labelTypeNodes.push(newNode);
     },
