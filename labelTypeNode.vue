@@ -24,7 +24,7 @@
 
 <script>
 import Vue from "vue";
-import { SpinalNode } from "spinal-model-graph";
+import { SpinalNode, SPINAL_RELATION_LST_PTR_TYPE} from "spinal-model-graph";
 import { createLabelShape } from "./utilities.js";
 import labelTypeDialog from "./labelTypeDialog.vue";
 import labelList from "./labelList.vue";
@@ -132,7 +132,7 @@ export default {
     addLabel: function(newLabel) {
       let labelNode = new SpinalNode(newLabel.name.get(), undefined, newLabel);
 
-      this.typeNode.addChildInContext(labelNode, "hasLabel", 0, this.context);
+      this.typeNode.addChildInContext(labelNode, "hasLabel", SPINAL_RELATION_LST_PTR_TYPE, this.context);
       this.labelNodes.push(labelNode);
       this.labels.push(newLabel);
 
