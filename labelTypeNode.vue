@@ -24,7 +24,7 @@
 
 <script>
 import Vue from "vue";
-import { SpinalNode } from "../spinal-model-graph/src/index.js";
+import { SpinalNode } from "spinal-model-graph";
 import { createLabelShape } from "./utilities.js";
 import labelTypeDialog from "./labelTypeDialog.vue";
 import labelList from "./labelList.vue";
