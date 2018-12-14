@@ -46,7 +46,7 @@ const classExtention = class {
   createUI() {
     this.panel = new PanelClass(this.viewer, PanelTitle);
     var button1 = new Autodesk.Viewing.UI.Button(ButtonLabel);
-    this.panel.setVisible(true);
+    //this.panel.setVisible(true);
     button1.onClick = e => {
       if (!this.panel.isVisible()) {
         this.panel.setVisible(true);
