@@ -17,7 +17,7 @@ import {
   SpinalNode,
   SpinalContext,
   SpinalGraph
-} from "../spinal-model-graph/src/index.js";
+} from "spinal-model-graph";
 import { LabelModel } from "./labelModel.js";
 
 function hitTest(e) {
