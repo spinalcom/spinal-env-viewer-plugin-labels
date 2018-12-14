@@ -7,7 +7,7 @@ const ComponentCtor = Vue.extend(label);
 const ClassName = "Labels";
 const PanelTitle = "Labels";
 const ButtonLabel = "Labels";
-const ButtonIcon = "done";
+const ButtonIcon = "group_work";
 
 const classExtention = class {
   constructor(viewer, options) {
